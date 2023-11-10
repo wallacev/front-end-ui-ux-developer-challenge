@@ -34,7 +34,13 @@ npm start
 
 2. Abra o seu navegador da web e acesse o seguinte URL:
 
-http://localhost:8080
+Por padrão http://localhost:8080
+
+Caso você possua algum serviço rodando na porta 8080 o http-server lhe dará um outro endereço
+
+![image](https://github.com/wallacev/front-end-ui-ux-developer-challenge/assets/18698901/dc39b686-8836-47a8-b53e-36fe7f151d9a)
+
+
 
 Você deve ver uma página como essa 
 
