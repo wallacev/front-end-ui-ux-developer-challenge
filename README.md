@@ -18,7 +18,7 @@ https://github.com/wallacev/front-end-ui-ux-developer-challenge.git
 cd front-end-ui-ux-developer-challenge
 
 
-3. Instale as dependências locais (somente estou utilizando o http-server):
+3. Instale as dependências locais (estou utilizando apenas o http-server):
 
 npm install
 
@@ -36,6 +36,10 @@ npm start
 
 http://localhost:8080
 
+Você deve ver uma página como essa 
+
+![image](https://github.com/wallacev/front-end-ui-ux-developer-challenge/assets/18698901/bbfcd02b-e93c-4c09-8de5-6e53305d6a8f)
+
 
 ## Acessando a Página "Cupons de Desconto"
 
@@ -46,6 +50,12 @@ Agora que o servidor local está em execução, você pode acessar a página "Cu
 
 ## Próximos Passos
 
-O projeto está em desenvolvimento e continuará a ser aprimorado. Fique à vontade para contribuir ou personalizar conforme suas necessidades.
+Ative o toggle de cupom de descontos para começar a cadastrar seus cupons de desconto
+
+![image](https://github.com/wallacev/front-end-ui-ux-developer-challenge/assets/18698901/b4d7c67f-76fd-4682-9e90-9a6d0b87b433)
+
+Ao ativar insira os dados do cupom de descontos, a listagem, gráfico e o faturamento dos cupons não depende da funcionalidade estar com o toggle ligado
 
 
+
+![image](https://github.com/wallacev/front-end-ui-ux-developer-challenge/assets/18698901/54572f4f-123b-49bd-95de-5d672f9a9e1d)
