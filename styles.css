@@ -1,0 +1,544 @@
+:root {
+    --primary-color: #F94701;
+    --secondary-color: #129A9E;
+    --secondary-color-dark: #017D70;
+    --menu-list-color: #2b3035;
+    --content-background-color: #e5e5e5;
+    --text-color: #1E1E1E;
+    --text-color-light: #FFFFFF;
+    --dark-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    position: relative;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.col {
+    flex-direction: column;
+}
+
+.col-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    gap: 16px;
+}
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.space-around-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.coupons-info-banner {
+    display: flex;
+    align-items: flex-start;
+}
+
+.coupons-info-banner p {
+    text-align: justify;
+    padding: 0px 20px;
+}
+
+.coupons-info-banner img {
+    width: 400px;
+}
+
+
+.top-bar {
+    display: flex;
+    background-color: var(--secondary-color);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    justify-content: space-between;
+}
+
+.menu {
+    background-color: var(--menu-list-color);
+    color: #fff;
+    width: 250px;
+    position: fixed;
+    height: 100%;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.logo {
+    text-align: center;
+    background-color: var(--secondary-color-dark);
+    width: 250px;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.menu-toggle {
+    display: none;
+    padding: 10px;
+    cursor: pointer;
+    text-align: right;
+}
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 6px 0;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 50px;
+}
+
+.menu-list li {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 15px;
+}
+
+.menu-list li:hover {
+    background-color: var(--menu-list-color, darken(10%));
+    filter: brightness(1.1);
+}
+
+.menu-list a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.menu-list i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.content {
+    padding-left: 280px;
+    padding-top: 10px;
+    min-height: calc(100vh - 60px);
+    background-color: var(--content-background-color);
+}
+
+.container {
+    background-color: white;
+    box-shadow: var(--dark-shadow);
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.title-page {
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 34px;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+#cupom-status {
+    text-align: center;
+    margin: 0;
+}
+
+#criar-cupom {
+    display: none;
+}
+
+#cupom-form {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#cupom-form p {
+    padding: 0 20px;
+}
+
+#cupom-form label {
+    margin-bottom: 8px;
+}
+
+input,
+select,
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--secondary-color-dark);
+    color: white;
+}
+
+#gerar-codigo-container {
+    display: none;
+}
+
+.relatorios {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.usar-cupom-btn {
+    width: 100px;
+}
+
+#gerar-codigo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    gap: 8px;
+    padding-top: 0px;
+    font-size: 12px;
+    width: 200px;
+    margin: auto;
+}
+
+.cupom-tipo-btn {
+    display: inline-block;
+    background-color: #fff;
+    color: var(--secondary-color);
+    padding: 10px 20px;
+    margin: 5px;
+    border: var(--secondary-color-dark) 2px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 200px;
+    height: 60px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.cupom-tipo-btn.active {
+    color: #fff;
+    background-color: var(--secondary-color);
+}
+
+.cupom-tipo-relatorio-btn {
+    display: inline-block;
+    background-color: #fff;
+    color: var(--secondary-color);
+    padding: 10px 20px;
+    margin: 5px;
+    border: var(--secondary-color-dark) 2px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 200px;
+    height: 60px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.cupom-tipo-relatorio-btn.active {
+    color: #fff;
+    background-color: var(--secondary-color);
+}
+
+#cupons-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.cupom-item {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cupom-item-header {
+    border-bottom: 1px solid #ccc;
+    background-color: var(--content-background-color);
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cupom-item-header .cupom-info p {
+    font-weight: bold;
+}
+
+.excluir-cupom-btn {
+    background-color: #ff5a5a;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    width: 45px;
+}
+
+.excluir-cupom-btn:hover {
+    background-color: #d9534f;
+}
+
+.cupom-info {
+    width: 90%;
+}
+
+.cupom-info p {
+    width: 15%;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.modal img {
+    max-width: 50px;
+    margin-bottom: 15px;
+}
+
+.modal h2 {
+    margin-bottom: 15px;
+}
+
+.modal p {
+    margin-bottom: 20px;
+}
+
+.modal button {
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal button:hover {
+    background-color: var(--secondary-color-dark);
+}
+
+.modal.active {
+    display: block;
+}
+
+#cuponsAtivadosModal .material-icons {
+    font-size: 48px;
+    color: var(--secondary-color);
+    margin-bottom: 16px;
+}
+
+#cuponsDesativadosModal .material-icons {
+    font-size: 48px;
+    color: #FF0000;
+    margin-bottom: 16px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .menu {
+        width: 0;
+        overflow: hidden;
+        transition: width 0.5s;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-list {
+        margin-top: 0px;
+    }
+
+    .menu-list li {
+        text-align: left;
+    }
+
+    .col-2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container {
+        flex: 1;
+        border: 1px solid #ccc;
+        padding: 16px;
+    }
+
+    #cuponsChart {
+        width: 100%;
+    }
+
+    .menu-closed {
+        width: 100px;
+    }
+
+
+    .content {
+        padding-left: 0;
+    }
+
+    .container {
+        margin: 10px;
+    }
+
+    .title-page,
+    #cupom-form {
+        margin: 10px;
+    }
+
+    .coupons-info-banner img {
+        width: 100%;
+    }
+
+    .cupom-tipo-btn,
+    .cupom-tipo-relatorio-btn {
+        width: auto;
+    }
+
+    .cupom-item,
+    .cupom-item-header {
+        flex-direction: column;
+    }
+
+    .cupom-info p {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-hamburger {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .menu-hamburger i {
+        font-size: 24px;
+    }
+
+    .menu-opened {
+        position: fixed;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--menu-list-color);
+        z-index: 3;
+    }
+
+    .menu-opened li:hover {
+        background-color: var(--menu-list-color);
+        filter: brightness(1);
+    }
+}

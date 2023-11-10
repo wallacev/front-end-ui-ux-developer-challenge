@@ -1,0 +1,15 @@
+{
+  "name": "front-end-ui-ux-developer-challenge-main",
+  "description": "Desafio vaga Desenvolvedor Front-End UI/UX",
+  "version": "1.0.0",
+  "main": "script.js",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server"
+  },
+  "author": "Kevin Silva",
+  "license": "ISC"
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://multipedidos.com.br/wp-content/uploads/2021/06/favicon-mp.png" type="image/png">
+    <link rel="shortcut icon" href="https://multipedidos.com.br/wp-content/uploads/2021/06/favicon-mp.png"
+        type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>multipedidos</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="menu-hamburger" id="menuHamburger">
+            <i class="material-icons">menu</i>
+        </div>
+
+        <div class="menu">
+            <ul class="menu-list">
+                <li><a href="#"><i class="material-icons">help</i> Ajuda</a></li>
+                <li><a href="#"><i class="material-icons">payment</i> Central de Pagamento</a></li>
+                <li><a href="#"><i class="material-icons">store</i> Editor de Produtos</a></li>
+                <li><a href="#"><i class="material-icons">shopping_cart</i> Pedidos</a></li>
+                <li><a href="#"><i class="material-icons">inventory</i> Controle de Estoque</a></li>
+                <li><a href="#"><i class="material-icons">description</i> Relatórios</a></li>
+                <li><a href="#"><i class="material-icons">motorcycle</i> MP Boy</a></li>
+                <li><a href="#"><i class="material-icons">loyalty</i> Fidelidade</a></li>
+                <li><a href="#"><i class="material-icons">settings</i> Configurações</a></li>
+                <li><a href="#"><i class="material-icons">local_shipping</i> Taxas de Entrega</a></li>
+                <li><a href="#"><i class="material-icons">two_wheeler</i> Motoboy</a></li>
+                <li><a href="#"><i class="material-icons">receipt</i> Notas Fiscais</a></li>
+                <li><a href="javascript:void(0);" onclick="loadPage('cupons');"><i class="material-icons">loyalty</i>
+                        Cupons de desconto</a></li>
+            </ul>
+
+        </div>
+        <div class="top-bar">
+            <div class="logo">
+                <img src="images/logotipo-multipedidos-horizontal-colorido-1024x192.png"
+                    alt="logotipo-multipedidos-horizontal">
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="cupons-content">
+            <div class="title-page">
+                <h2><i class="material-icons">computer</i>Cupons de desconto</h2>
+                <a href="">Avalie esta funcionalidade</a>
+                <p><i>Crie cupons de desconto para aumentar suas vendas</i></p>
+            </div>
+            <div class="row col-2">
+                <div class="configuracao container" id="configuracao">
+                    <div class="cupons-info">
+                        <h2>Como Funcionam os Cupons de Desconto</h2>
+                        <div class="coupons-info-banner row">
+                            <div class="col">
+                                <img src="images/banner-cupons.png" alt="banner-promocional-cupons">
+                            </div>
+                            <div class="col">
+                                <p>
+                                    Os cupons são códigos gerados para divulgar nas redes sociais, WhatsApp, panfletos,
+                                    etc. Os cupons podem ser de uso geral ou de uso único. <br> <br>
+                                    No caso de cupons de uso geral, os clientes podem utilizá-los enquanto estiverem
+                                    ativos na plataforma. Já os cupons de uso único só podem ser usados uma vez por
+                                    cliente. <br>
+                                </p>
+                                <div class="row">
+                                    <p id="cupon-status">Ativar cupons de desconto</p>
+                                    <label class="switch">
+                                        <input type="checkbox" id="cupon-toggle">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="criar-cupom container" id="criar-cupom">
+                    <h2>Criar Cupom de Desconto</h2>
+                    <form id="cupom-form">
+
+                        <div id="cupom-tipo-buttons row">
+                            <button type="button" class="cupom-tipo-btn active" data-value="geral">Cupom Geral</button>
+                            <button type="button" class="cupom-tipo-btn" data-value="unico">Cupom Único</button>
+                        </div>
+
+                        <label for="cupom-nome">Código do Cupom:</label>
+                        <input type="text" id="cupom-nome" name="cupom-nome" required>
+                        <div id="gerar-codigo-container">
+                            <button type="button" id="gerar-codigo"><i class="material-icons">refresh</i> Gerar Novo
+                                Código</button>
+                        </div>
+
+                        <label for="cupom-tipo-desconto">Selecione o tipo de desconto:</label>
+                        <select id="cupom-tipo-desconto" name="cupom-tipo-desconto" required>
+                            <option value="fixo">Desconto fixo</option>
+                            <option value="porcentagem">Porcentagem de desconto</option>
+                        </select>
+
+                        <label for="cupom-valor">Valor do Desconto:</label>
+                        <input type="text" id="cupom-valor" name="cupom-valor" required>
+
+                        <label for="cupom-data-limite">Data Limite para Uso:</label>
+                        <input type="checkbox" id="cupom-data-limite" name="cupom-data-limite">
+                        <input type="date" id="cupom-data" name="cupom-data">
+
+                        <label for="cupom-valor-minimo">Valor Mínimo do Pedido:</label>
+                        <input type="text" id="cupom-valor-minimo" name="cupom-valor-minimo" placeholder="R$ 00,00">
+
+                        <div class="center-content">
+                            <p id="cupon-status">Imprimir Cupom</p>
+                            <label for="cupom-imprimir" class="switch">
+                                <input type="checkbox" id="cupom-imprimir" name="cupom-imprimir">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+
+                        <button type="submit">Criar Cupom</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="relatorios container row col-2">
+                <div class="">
+                    <h2>Uso de cupons por tipo</h2>
+                    <div class="grafico-container">
+                        <canvas id="cuponsChart" width="600" height="400"></canvas>
+                    </div>
+                </div>
+                <div class="Faturamentos-container">
+                    <h2>Faturamentos realizados com cupons</h2>
+                </div>
+            </div>
+
+            <div class="cupons-cadastrados container" id="cupons-cadastrados">
+                <div id="cupons-cadastrados-buttons row">
+                    <button type="button" class="cupom-tipo-relatorio-btn active" data-value="todos">Todos</button>
+                    <button type="button" class="cupom-tipo-relatorio-btn" data-value="geral">Geral</button>
+                    <button type="button" class="cupom-tipo-relatorio-btn" data-value="unico">Único</button>
+                </div>
+                <h2>Cupons Cadastrados</h2>
+                <p>Aqui você pode encontrar a lista de todos os cupons cadastrados em seu sistema.</p>
+                <ul id="cupons-lista"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+
+    <div id="cuponsAtivadosModal" class="modal">
+        <h2 class="material-icons">check_circle</h2>
+        <h2>Cupons Ativados</h2>
+        <p>Agora seus clientes terão a opção de usar cupons de desconto na página de pedidos</p>
+        <button class="fechar-modal-btn" data-modal-id="cuponsAtivadosModal">OK</button>
+    </div>
+
+    <div id="cuponsDesativadosModal" class="modal">
+        <h2 class="material-icons">cancel</h2>
+        <h2>Cupons Desativados</h2>
+        <p>Agora seus clientes NÃO poderão usar cupons de desconto na página de pedidos</p>
+        <button class="fechar-modal-btn" data-modal-id="cuponsDesativadosModal">OK</button>
+    </div>
+</body>
+
+</html>
