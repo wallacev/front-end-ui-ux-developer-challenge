@@ -53,8 +53,8 @@
                 <a href="">Avalie esta funcionalidade</a>
                 <p><i>Crie cupons de desconto para aumentar suas vendas</i></p>
             </div>
-            <div class="row col-2">
-                <div class="configuracao container" id="configuracao">
+            <div class="row" style="display:flex; align-items: stretch">
+                <div class="configuracao container" id="configuracao" style="flex:1;">
                     <div class="cupons-info">
                         <h2>Como Funcionam os Cupons de Desconto</h2>
                         <div class="coupons-info-banner row">
@@ -81,7 +81,7 @@
                     </div>
                 </div>
 
-                <div class="criar-cupom container" id="criar-cupom">
+                <div class="criar-cupom container" id="criar-cupom" style="flex: 1;">
                     <h2>Criar Cupom de Desconto</h2>
                     <form id="cupom-form">
 
@@ -90,6 +90,9 @@
                             <button type="button" class="cupom-tipo-btn" data-value="unico">Cupom Único</button>
                         </div>
 
+                        <div class="cupom-info-criar">
+                            <p><b>Cupom Geral:</b> Use para criar um código fácil de lembrar (ex: DESCONTO10) para divulgar nas redes sociais, Whatsapp, panfletos, etc. Ideal para atingir vários clientes de uma só vez</p>
+                        </div>
                         <label for="cupom-nome">Código do Cupom:</label>
                         <input type="text" id="cupom-nome" name="cupom-nome" required>
                         <div id="gerar-codigo-container">
@@ -105,7 +108,7 @@
 
                         <label for="cupom-valor">Valor do Desconto:</label>
                         <input type="text" id="cupom-valor" name="cupom-valor" required>
-
+                        
                         <label for="cupom-data-limite">Data Limite para Uso:</label>
                         <input type="checkbox" id="cupom-data-limite" name="cupom-data-limite">
                         <input type="date" id="cupom-data" name="cupom-data">
@@ -152,7 +155,7 @@
     </div>
 
     <script src="script.js" defer></script>
-
+    <div class="overlay" id="overlay"></div>
     <div id="cuponsAtivadosModal" class="modal">
         <h2 class="material-icons">check_circle</h2>
         <h2>Cupons Ativados</h2>

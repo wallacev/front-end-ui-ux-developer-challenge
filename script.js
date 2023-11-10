@@ -10,14 +10,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 {
                     id: 1,
                     nome: 'Cupom 1',
-                    valorDesconto: 10,
-                    dataValidade: '2023-12-31',
+                    cupomTipo:'geral',
+                    valor: 10,
+                    valorMinimo:50,
+                    usos: 2,
+                    tipoDesconto: 'fixo',
+                    dataLimite: '2023-12-31',
                 },
                 {
                     id: 2,
                     nome: 'Cupom 2',
-                    valorDesconto: 15,
-                    dataValidade: '2023-11-30',
+                    cupomTipo:'unico',
+                    valor: 35,
+                    valorMinimo:70,
+                    usos:3,
+                    tipoDesconto: 'geral',
+                    dataLimite: '2023-12-31',
                 },
             ],
             cuponsAtivos: true,
@@ -51,12 +59,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function abrirModal(modalId) {
         const modal = document.getElementById(modalId);
+        const overlay = document.getElementById('overlay');
         modal.classList.add('active');
+        overlay.classList.add('active');
     }
 
     function fecharModal(modalId) {
         const modal = document.getElementById(modalId);
+    const overlay = document.getElementById('overlay');
         modal.classList.remove('active');
+        overlay.classList.remove('active');
     }
 
     function fecharModalComBotao(modalId) {
@@ -73,9 +85,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function fecharModalAoClicarFora(event) {
         const modals = document.querySelectorAll('.modal');
+        const overlay = document.getElementById('overlay');
         modals.forEach((modal) => {
             if (modal.classList.contains('active') && !modal.contains(event.target)) {
-                modal.classList.remove('active');
+                modal.classList.remove('active');            
+                overlay.classList.remove('active');
+
             }
         });
     }
@@ -248,6 +263,32 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    const cupomTipoButtons = document.querySelectorAll('.cupom-tipo-btn');
+    cupomTipoButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            cupomTipoButtons.forEach(function (btn) {
+                btn.classList.remove('active');
+            });
+            button.classList.add('active');
+    
+            const cupomTipo = button.getAttribute('data-value');
+    
+            if (cupomTipo === 'geral') {
+                updateCupomInfo('<p><b>Cupom Geral:</b> Use para criar um código fácil de lembrar (ex: DESCONTO10) para divulgar nas redes sociais, Whatsapp, panfletos, etc. Ideal para atingir vários clientes de uma só vez</p>');
+            } else if (cupomTipo === 'unico') {
+                updateCupomInfo('<p><b>Uso único:</b> Use para atrair clientes seus que ainda não pedem no Multipedidos. Esse cupom só pode ser usado 1 vez e você poderá imprimi-lo para oferecer para os clientes, para incentivá-los a usar a plataforma pela primeira vez.</p>');
+            }
+        });
+    });
+    
+    function updateCupomInfo(newText) {
+        document.querySelector('.cupom-info-criar').innerHTML = newText;
+    }
+
+    function updateCupomInfo(newText) {
+        document.querySelector('.cupom-info-criar').innerHTML = newText;
+    }
+    
     function addSubmitListener() {
         const cupomForm = document.getElementById('cupom-form');
         if (cupomForm) {
@@ -303,16 +344,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
-
-    const cupomTipoButtons = document.querySelectorAll('.cupom-tipo-btn');
-    cupomTipoButtons.forEach(function (button) {
-        button.addEventListener('click', function () {
-            cupomTipoButtons.forEach(function (btn) {
-                btn.classList.remove('active');
-            });
-            button.classList.add('active');
-        });
-    });
 
     const cupomValorMinimoInput = document.getElementById('cupom-valor-minimo');
     if (cupomValorMinimoInput) {
