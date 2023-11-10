@@ -38,7 +38,8 @@ http://localhost:8080
 
 Você deve ver uma página como essa 
 
-![image](https://github.com/wallacev/front-end-ui-ux-developer-challenge/assets/18698901/bbfcd02b-e93c-4c09-8de5-6e53305d6a8f)
+![image](https://github.com/wallacev/front-end-ui-ux-developer-challenge/assets/18698901/40e89875-1792-4018-b2fb-72e7576bae20)
+
 
 
 ## Acessando a Página "Cupons de Desconto"
@@ -52,10 +53,24 @@ Agora que o servidor local está em execução, você pode acessar a página "Cu
 
 Ative o toggle de cupom de descontos para começar a cadastrar seus cupons de desconto
 
-![image](https://github.com/wallacev/front-end-ui-ux-developer-challenge/assets/18698901/b4d7c67f-76fd-4682-9e90-9a6d0b87b433)
+![image](https://github.com/wallacev/front-end-ui-ux-developer-challenge/assets/18698901/81ce868e-fa70-437a-9d74-4a2d873b34cb)
+
 
 Ao ativar insira os dados do cupom de descontos, a listagem, gráfico e o faturamento dos cupons não depende da funcionalidade estar com o toggle ligado
 
 
 
-![image](https://github.com/wallacev/front-end-ui-ux-developer-challenge/assets/18698901/54572f4f-123b-49bd-95de-5d672f9a9e1d)
+![image](https://github.com/wallacev/front-end-ui-ux-developer-challenge/assets/18698901/7449816a-2b2f-417d-ae03-56fdaefdb6c7)
+
+
+O gráfico será exibido desde que haja cupons cadastrados, para o projeto estou utilizando o localStorage para armazenamento
+
+![image](https://github.com/wallacev/front-end-ui-ux-developer-challenge/assets/18698901/a00e1a11-5198-4f46-9b3e-67b296391144)
+
+
+Para testar as funcionalidades do gráfico e de faturamento também adicionei um botão para registrar o uso do cupom, ao recarregar a página os dados devem persistir e o gráfico atualizar com as novas informações
+
+![image](https://github.com/wallacev/front-end-ui-ux-developer-challenge/assets/18698901/fb59a9cc-f30d-4856-80a9-a08b5c14a883)
+
+
+
